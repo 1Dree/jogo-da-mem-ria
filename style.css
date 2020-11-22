@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button#initBtn {
+  cursor: pointer;
+  font-size: 1.7rem;
+  padding: 0.2em 2.2em;
+  margin: 5px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  background-color: lime;
+}
+
+#cardboard {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.memory-card {
+  position: relative;
+
+  cursor: pointer;
+  width: calc(100vw / 7);
+  height: 14vw;
+  opacity: 50%;
+  border-radius: 10px;
+  background-color: red;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memory-card img,
+div.back {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #406895;
+}
+
+div.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: lightblue;
+  border: 5px solid lightblue;
+}
+
+.back p {
+  margin-top: -7px;
+  font-family: "Aton", sans-serif;
+  font-size: 3.3vw;
+  font-weight: bolder;
+  transform: rotate(-50deg);
+}
+
+img.front {
+  padding: 5px;
+  transform: rotateY(180deg);
+}
